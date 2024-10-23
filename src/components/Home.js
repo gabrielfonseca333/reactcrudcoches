@@ -61,6 +61,7 @@ export default class Home extends Component {
                 <th>MARCA</th>
                 <th>IMAGEN</th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
