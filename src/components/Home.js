@@ -62,6 +62,7 @@ export default class Home extends Component {
                 <th>IMAGEN</th>
                 <th></th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -72,6 +73,7 @@ export default class Home extends Component {
                             <td>{coche.marca}</td>
                             <td><img style={{width:"200px", height:"150px"}} src={coche.imagen}/></td>
                             <td><NavLink to={"/detalles/" + coche.idCoche}>Detalles</NavLink></td>
+                            <td><NavLink to={"/update/" + coche.idCoche +"/" + coche.marca+"/"+coche.modelo+"/"+coche.conductor}>Editar</NavLink></td>
                         </tr>)
                     })
                 }
