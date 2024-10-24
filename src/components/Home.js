@@ -21,6 +21,17 @@ export default class Home extends Component {
 
     }
 
+    deleteCoche=(id)=>{
+
+      let request = "api/coches/deletecoche/" + id
+      let url = Global.urlApiCoches + request
+      axios.delete(url).then(response=>{
+        console.log("delete coche " + id)
+        this.loadCoches()
+      })
+
+    }
+
     componentDidMount=()=>{
         this.loadCoches()
     }
@@ -74,6 +85,15 @@ export default class Home extends Component {
                             <td><img style={{width:"200px", height:"150px"}} src={coche.imagen}/></td>
                             <td><NavLink to={"/detalles/" + coche.idCoche}>Detalles</NavLink></td>
                             <td><NavLink to={"/update/" + coche.idCoche +"/" + coche.marca+"/"+coche.modelo+"/"+coche.conductor}>Editar</NavLink></td>
+                            <td>
+                              <button 
+                              className="btn btn-danger"
+                              onClick={()=>{
+                                this.deleteCoche(coche.idCoche)
+                              }}>
+                                Delete
+                              </button>
+                            </td>
                         </tr>)
                     })
                 }

@@ -8,7 +8,7 @@ export default class DetallesCoche extends Component {
     coche: null,
   };
 
-  mostrarCoche=()=>{
+  findCoche=()=>{
     let id = this.props.id
     let request = "api/Coches/FindCoche/" + id
     let url = Global.urlApiCoches + request
@@ -23,7 +23,7 @@ export default class DetallesCoche extends Component {
   }
 
   componentDidMount=()=>{
-    this.mostrarCoche()
+    this.findCoche()
   }
 
   render() {

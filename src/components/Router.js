@@ -5,6 +5,7 @@ import Home from "./Home";
 import CreateCoche from "./CreateCoche";
 import DetallesCoche from "./DetallesCoche";
 import UpdateCoche from "./UpdateCoche";
+import Menu2 from "./Menu2";
 
 export default class Router extends Component {
   render() {
